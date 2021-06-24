@@ -50,12 +50,27 @@ main section.categories-show {
         border-bottom-left-radius: 20px;
         font-size: 0.8em;
       }
+      div.sold_out {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        opacity: 0.3;
+        color: white;
+        background: red;
+        border-bottom-right-radius: 20px;
+        font-size: 0.8em;
+        border: 0px;
+      }
 
       &:hover {
 
         border-color: #999;
 
         footer {
+          opacity: 1.0;
+        }
+        div.sold_out {
           opacity: 1.0;
         }
       }
