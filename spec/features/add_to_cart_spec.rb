@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Visitor navigates to product page from home page", type: :feature, js: true do
+RSpec.feature "Visitor can add to cart and cart increases by 1", type: :feature, js: true do
 
   # SETUP
   before :each do
@@ -17,13 +17,13 @@ RSpec.feature "Visitor navigates to product page from home page", type: :feature
     end
   end
 
-  scenario "Navigate to product page" do
+  scenario "Click add" do
     visit root_path
-    click_on(@category.products.first.name)
+    click_on('Add', match: :first)
     # commented out b/c it's for debugging only
     Capybara.default_max_wait_time = 5
     save_screenshot
 
-    expect(page).to have_content(@category.products.first.description)
+    expect(page).to have_content("My Cart (1)")
   end
 end
